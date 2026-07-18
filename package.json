@@ -1,0 +1,18 @@
+{
+  "name": "home-front",
+  "version": "1.0.0",
+  "private": true,
+  "description": "The Home Front — Unit 7 Texas History wartime civic game (TEKS 7.7E, 7.11A, 7.11B, 7.17B). Run a Texas town's home front, 1941-1945 (solo, one class-wide group) — over a server-authoritative Socket.IO backend with a live Teacher Command Center reporting one class-wide accuracy group.",
+  "comment": "No npm workspaces: this drive is exFAT, which cannot host the symlinks/junctions workspace linking requires. server/ and client/ install independently; `npm install` here cascades via postinstall.",
+  "scripts": {
+    "postinstall": "npm install --prefix server --no-fund --no-audit && npm install --prefix client --no-fund --no-audit",
+    "dev:server": "npm run dev --prefix server",
+    "dev:client": "npm run dev --prefix client",
+    "test": "npm test --prefix server",
+    "build": "npm run build --prefix client",
+    "start": "node server/src/index.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
